@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+    <style>
+      .language-switcher {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+      
+      .language-btn {
+        background-color: #f6931d;
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        margin-left: 5px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      .language-btn:hover {
+        background-color: #e08417;
+      }
+      
+      .language-btn.active {
+        background-color: #1c174e;
+        border: 1px solid #f6931d;
+      }
+      
+      .video-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+      
+      .video-btn {
+        background-color: #9a9eba;
+        border: 2px solid #f6931d;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 1.1rem;
+        min-width: 220px;
+      }
+      
+      .video-btn:hover {
+        background-color: #f6931d;
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(246, 147, 29, 0.3);
+      }
+      
+      .video-btn i {
+        font-size: 1.3rem;
+      }
+      
+      @media (max-width: 768px) {
+        .video-buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+        
+        .video-btn {
+          width: 100%;
+          max-width: 300px;
+        }
+        
+        .language-switcher {
+          position: relative;
+          top: 0;
+          right: 0;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+          margin-top: 10px;
+        }
+      }
+    </style>
+    <!-- Иконки для кнопок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <header class="" style="background-color: #1c174e; position: relative;">
+      <div class="language-switcher">
+        <button class="language-btn active" data-lang="ru">RU</button>
+        <button class="language-btn" data-lang="en">EN</button>
+        <button class="language-btn" data-lang="de">DE</button>
+      </div>
+      <div class="container">
+        <img
+          src="./assets/images/logo.png"
+          alt='Логотип компании "Персонал"'
+          class="img-fluid mx-auto d-block"
+        />
+      </div>
+    </header>
+    <section style="background-color: #1c174e">
+      <div class="container">
+        <div class="row align-items-start mb-5">
+          <h2
+            class="text-uppercase text-white text-center fw-bold display-5 mb-0"
+            data-translate="main_title"
+          >
+            ключи к переходу русского бизнеса в новый уклад
+          </h2>
+        </div>
+
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 text-center">
+            <img
+              src="./assets/images/novotel.png"
+              alt="Novotel Phuket City Phokeethra"
+              class="img-fluid"
+              style="max-height: 450px; object-fit: cover"
+            />
+          </div>
+
+          <div
+            class="col-lg-6 d-flex flex-column justify-content-between justify-content-lg-between text-center text-lg-start py-3 py-lg-0"
+          >
+            <div
+              class="d-flex justify-content-center justify-content-lg-start align-items-center mb-4"
+            >
+              <h3 class="text-white text-uppercase fw-bold display-6 mb-0" data-translate="date">
+                13 января <span class="fw-normal">2026 года</span>
+              </h3>
+            </div>
+
+            <div
+              class="d-flex justify-content-center justify-content-lg-start align-items-center mb-4"
+            >
+              <img
+                src="./assets/images/map-icon.png"
+                alt="Локация"
+                class="img-fluid"
+                style="max-width: 90px"
+              />
+            </div>
+
+            <div
+              class="d-flex justify-content-center justify-content-lg-start align-items-center"
+            >
+              <h3 class="text-white text-uppercase mb-4 display-6" data-translate="location">
+                AMORA BEACH RESORT PHUKET The sky room
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-section py-5" style="background-color: #1c174e">
+      <div class="container text-center">
+        <h1 class="display-4 fw-bold text-white text-uppercase mb-0" data-translate="name_first">Гарретт</h1>
+        <h1 class="display-4 fw-bold text-white text-uppercase mt-0" data-translate="name_last">
+          Джонстон
+        </h1>
+
+        <p class="fs-3 text-white text-uppercase opacity-75 mb-4" data-translate="country">
+          / Ирландия /
+        </p>
+
+        <p class="fs-3 text-white text-uppercase mb-4" data-translate="event_description">
+          топовое бизнес-мероприятие высокого сезона<br />
+          <span class="fw-bold fs-2">2026</span>
+        </p>
+
+        <a
+          href="https://cbiletom.ru/event.php?event=11670"
+          class="btn btn-lg px-5 py-3 text-uppercase text-white fw-bold mb-3"
+          style="background-color: #f6931d"
+          data-translate="buy_tickets"
+          id="buyTicketsBtn"
+        >
+          купить билеты
+        </a>
+        
+        <!-- Новые кнопки для видео -->
+        <div class="video-buttons">
+          <a href="./video/event.mp4" 
+             target="_blank" 
+             class="video-btn"
+             data-translate="video_report"
+             id="videoReportBtn">
+            <i class="fas fa-video"></i> Видеоотчет
+          </a>
+          <a href="https://youtu.be/pB96kJHyloU" 
+             target="_blank" 
+             class="video-btn"
+             data-translate="interview"
+             id="interviewBtn">
+            <i class="fas fa-play-circle"></i> Интервью на английском
+          </a>
+        </div>
+
+        <p class="fs-4 text-uppercase text-white opacity-75 w-75 mx-auto mt-4" data-translate="seminar_description">
+          бизнес мастер-класс на свободном русском языке от человека-эпохи, владеющего и
+          работающего на 11 языках мира
+        </p>
+      </div>
+    </section>
+    <section class="py-5" style="background-color: #9a9eba">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-4 text-center">
+            <img
+              src="./assets/images/garret-johnston.png"
+              alt="Гарретт Джонстон"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+
+          <div class="col-lg-8">
+            <h2 class="text-white fw-bold mb-4 text-uppercase" data-translate="name_full">
+              Гарретт Джонстон
+            </h2>
+
+            <p class="text-white fs-4 lh-lg opacity-90" data-translate="bio1">
+              Клиентский стратег, визионер и международный эксперт в области B2B
+              и B2C стратегического маркетинга. Ирландец, родился и вырос в
+              Дублине.
+            </p>
+
+            <p class="text-white fs-4 lh-lg opacity-90" data-translate="bio2">
+              Офисы его компании работают в Дублине, Цюрихе и Москве.
+            </p>
+
+            <p class="text-white fs-4 lh-lg opacity-90" data-translate="bio3">
+              Практик с почти 30-летним стажем работы в области маркетинга,
+              продаж и клиентских стратегий в 14 странах, на 5 континентах.
+              Работал в B2B, B2C и B2G сегментах.
+            </p>
+
+            <p class="text-white fs-4 lh-lg opacity-90" data-translate="bio4">
+              В числе клиентов: МТС, Х5 Retail Group, Telenor, Cap Gemini,
+              Tesco, Digicel, Ernst & Young, Cable & Wireless, PwC, Avaya, Ford,
+              Alcatel, RosNano MedInvest и другие.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-3" style="background-color: #1c174e">
+      <div class="container my-5">
+        <div class="d-flex align-items-center mb-4">
+          <span class="step-number me-4 text-white fs-3">1.</span>
+          <img
+            src="./assets/images/arrow-left-bottom.png"
+            alt="Стрелка"
+            class="step-arrow"
+          />
+        </div>
+
+        <h2 class="text-white fw-bold text-uppercase mb-3" data-translate="topic1_title">Шестой уклад</h2>
+
+        <p class="lead text-white opacity-75" data-translate="topic1_text">
+          Переход сейчас, в 2025 году, от 5-ого уклада («люди, создающие
+          удивительные технологии») к шестому («технологии, создающие
+          удивительных людей»). Большие последствия русского мира предпринимателей и уже скоро.
+        </p>
+      </div>
+      <div class="container my-5">
+        <div class="d-flex align-items-center mb-4">
+          <span class="step-number me-4 text-white fs-3">2.</span>
+          <img
+            src="./assets/images/arrow-left-bottom.png"
+            alt="Стрелка"
+            class="step-arrow"
+          />
+        </div>
+
+        <h2 class="text-white fw-bold text-uppercase mb-3" data-translate="topic2_title">
+          Взрыв искусственного интеллекта
+        </h2>
+
+        <p class="lead text-white opacity-75" data-translate="topic2_text">
+          Суперкомпьютер ассистент АI мощностью 1-5 петафлопов в кармане каждого
+          третьего потребителя - и бизнеса - к 2030. Карманного суперассистента
+          обмануть невозможно. Он купит только самые изумительные вещи в
+          заданном ценовом диапазоне. Выживут только такие производства
+          волшебного.
+        </p>
+      </div>
+      <div class="container my-5">
+        <div class="d-flex align-items-center mb-4">
+          <span class="step-number me-4 text-white fs-3">3.</span>
+          <img
+            src="./assets/images/arrow-left-bottom.png"
+            alt="Стрелка"
+            class="step-arrow"
+          />
+        </div>
+
+        <h2 class="text-white fw-bold text-uppercase mb-3" data-translate="topic3_title">
+          Не-искусственный интеллект
+        </h2>
+
+        <p class="lead text-white opacity-75" data-translate="topic3_text">
+          Всё, что логика, процесс, цифры - это 90% любого бизнеса за пределами
+          стартапов - будет автоматизироваться у всех бизнесов. Единственная
+          реальная дифференциация у бизнеса останется «не-искусственным
+          интеллектом»: ценности, мировоззрение, миссия видение, амбиция, риск
+          аппетит, культура. Там где компьютеру делать нечего. От этого все
+          больше и больше зависит судьба любого бизнеса.
+        </p>
+      </div>
+      <div class="container my-5">
+        <div class="d-flex align-items-center mb-4">
+          <span class="step-number me-4 text-white fs-3">4.</span>
+          <img
+            src="./assets/images/arrow-left-bottom.png"
+            alt="Стрелка"
+            class="step-arrow"
+          />
+        </div>
+
+        <h2 class="text-white fw-bold text-uppercase mb-3" data-translate="topic4_title">Для бизнеса</h2>
+
+        <p class="lead text-white opacity-75" data-translate="topic4_text">
+          Это означает что нужно не только делать крутые продукты и услуги, а
+          делать крутых клиентов. Если «клиентоориентированность («делать крутые
+          продукты») было лучшей бизнес моделью в 5-ом укладе, то для 6-ого
+          уклада нужны клиентоцентричность («делать крутых клиентов»). Нужен
+          бизнес с уникально ценной клиентоцентричной идеологией и стратегией.
+        </p>
+      </div>
+      <div class="container my-5">
+        <div class="d-flex align-items-center mb-4">
+          <span class="step-number me-4 text-white fs-3">5.</span>
+          <img
+            src="./assets/images/arrow-left-bottom.png"
+            alt="Стрелка"
+            class="step-arrow"
+          />
+        </div>
+
+        <h2 class="text-white fw-bold text-uppercase mb-3" data-translate="topic5_title">Примеры компании</h2>
+
+        <p class="lead text-white opacity-75" data-translate="topic5_text">
+          В 50 разных В2В и В2С отраслях из всего мира с крутой идеологий и
+          клиентоцентричным подходом, успешно обслуживающие массовый рынок.
+        </p>
+      </div>
+      <div class="container my-5">
+        <div class="d-flex align-items-center mb-4">
+          <span class="step-number me-4 text-white fs-3">6.</span>
+          <img
+            src="./assets/images/arrow-left-bottom.png"
+            alt="Стрелка"
+            class="step-arrow"
+          />
+        </div>
+
+        <h2 class="text-white fw-bold text-uppercase mb-3" data-translate="topic6_title">А теперь</h2>
+
+        <p class="lead text-white opacity-75" data-translate="topic6_text">
+          Что делать в понедельник, чтобы начать реализовывать всё, что
+          рекомендую в этой презентации.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-5" style="background-color: #9a9eba">
+      <div class="container text-center mb-5">
+        <h2 class="text-white text-uppercase fw-bold display-5" data-translate="pricing_title">
+          Стоимость участия
+        </h2>
+      </div>
+
+      <div class="container">
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4">
+            <div
+              class="card h-100 text-center p-4 shadow-lg d-flex flex-column"
+              style="background-color: #626d93; border: 1px solid #f6931d"
+            >
+              <h3 class="text-white fw-bold text-uppercase mb-4" data-translate="gold_tier">Золото</h3>
+
+              <ul class="list-unstyled text-white fs-5 mb-4">
+                <li class="mb-2" data-translate="gold_item1">Первый ряд</li>
+                <li class="mb-2" data-translate="gold_item2">Отдельная регистрация</li>
+                <li class="mb-2" data-translate="gold_item3">Бизнес-ужин с Гарреттом</li>
+                <li class="mb-2" data-translate="gold_item4">Индивидуальная консультация по прорывам вашего бизнеса в 2026</li>
+                <li class="mb-2" data-translate="gold_item5">Презентация</li>
+                <li class="mb-2" data-translate="gold_item6">Кофе-брейк — нетворкинг</li>
+                <li class="mb-2" data-translate="gold_item7">Фотосессия</li>
+                <li class="mb-2" data-translate="gold_item8">Сертификат</li>
+              </ul>
+
+              <div
+                class="text-white fs-5 mb-4 mt-auto"
+                style="min-height: 70px"
+              >
+                <p class="mb-1"><strong data-translate="until_22_12">до 22/12</strong> — 149 000 ₽</p>
+                <p class="mb-1"><strong data-translate="until_05_01">до 05/01</strong> — 179 000 ₽</p>
+                <p class="mb-0"><strong data-translate="until_13_01">до 13/01</strong> — 209 000 ₽</p>
+              </div>
+
+              <a
+                href="https://cbiletom.ru/event.php?event=11670"
+                class="btn mt-2 text-uppercase text-white fw-bold"
+                style="background-color: #f6931d"
+                data-translate="buy_tickets"
+                data-ticket-ru="https://cbiletom.ru/event.php?event=11670"
+                data-ticket-en="https://cbiletom.ru/event.php?event=11950"
+                data-ticket-de="https://cbiletom.ru/event.php?event=11951"
+              >
+                купить билеты
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div
+              class="card h-100 text-center p-4 shadow-lg d-flex flex-column"
+              style="background-color: #626d93; border: 1px solid #f6931d"
+            >
+              <h3 class="text-white fw-bold text-uppercase mb-4" data-translate="silver_tier">Серебро</h3>
+
+              <ul class="list-unstyled text-white fs-5 mb-4">
+                <li class="mb-2" data-translate="silver_item1">Со второго ряда</li>
+                <li class="mb-2" data-translate="silver_item2">Презентация</li>
+                <li class="mb-2" data-translate="silver_item3">Кофе-брейки</li>
+                <li class="mb-2" data-translate="silver_item4">Фотосессия</li>
+                <li class="mb-2" data-translate="silver_item5">Электронный сертификат</li>
+              </ul>
+
+              <div
+                class="text-white fs-5 mb-4 mt-auto"
+                style="min-height: 70px"
+              >
+                <p class="mb-1"><strong data-translate="until_22_12">до 22/12</strong> — 58 000 ₽</p>
+                <p class="mb-1"><strong data-translate="until_05_01">до 05/01</strong> — 78 000 ₽</p>
+                <p class="mb-0"><strong data-translate="until_13_01">до 13/01</strong> — 98 000 ₽</p>
+              </div>
+
+              <a
+                href="https://cbiletom.ru/event.php?event=11670"
+                class="btn mt-2 text-uppercase text-white fw-bold"
+                style="background-color: #f6931d"
+                data-translate="buy_tickets"
+                data-ticket-ru="https://cbiletom.ru/event.php?event=11670"
+                data-ticket-en="https://cbiletom.ru/event.php?event=11950"
+                data-ticket-de="https://cbiletom.ru/event.php?event=11951"
+              >
+                купить билеты
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer
+      class="py-5 text-center"
+      style="background-color: #1c174e; color: white"
+    >
+      <img
+        src="./assets/images/logo.png"
+        alt='Логотип компании "Персонал"'
+        class="img-fluid mx-auto d-block mb-4"
+        style="max-width: 150px"
+      />
+
+      <div
+        class="d-flex justify-content-center align-items-center mb-4 flex-wrap"
+      >
+        <p class="mb-0 mx-2 fs-5" data-translate="become_partner">
+          Стать <span class="fw-bold">партнером</span> мероприятия
+        </p>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center">
+        <a
+          href="https://wa.me/79621543976"
+          target="_blank"
+          class="d-flex align-items-center text-white text-decoration-none"
+        >
+          <img
+            src="./assets/images/whatsapp-icon.png"
+            alt="WhatsApp"
+            style="width: 24px; height: 24px"
+            class="me-2"
+          />
+          <span class="fs-5 mb-0">8 (962) 154-39-76</span>
+        </a>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    
+    <script>
+      // Переводы для разных языков
+      const translations = {
+        ru: {
+          main_title: "ключи к переходу русского бизнеса в новый уклад",
+          date: "13 января <span class='fw-normal'>2026 года</span>",
+          location: "AMORA BEACH RESORT PHUKET The sky room",
+          name_first: "Гарретт",
+          name_last: "Джонстон",
+          country: "/ Ирландия /",
+          event_description: "топовое бизнес-мероприятие высокого сезона<br /><span class='fw-bold fs-2'>2026</span>",
+          buy_tickets: "купить билеты",
+          video_report: "Как это было?",
+          interview: "Интервью на английском",
+          seminar_description: "бизнес мастер-класс на свободном русском языке от человека-эпохи, владеющего и работающего на 11 языках мира",
+          name_full: "Гарретт Джонстон",
+          bio1: "Клиентский стратег, визионер и международный эксперт в области B2B и B2C стратегического маркетинга. Ирландец, родился и вырос в Дублине.",
+          bio2: "Офисы его компании работают в Дублине, Цюрихе и Москве.",
+          bio3: "Практик с почти 30-летним стажем работы в области маркетинга, продаж и клиентских стратегий в 14 странах, на 5 континентах. Работал в B2B, B2C и B2G сегментах.",
+          bio4: "В числе клиентов: МТС, Х5 Retail Group, Telenor, Cap Gemini, Tesco, Digicel, Ernst & Young, Cable & Wireless, PwC, Avaya, Ford, Alcatel, RosNano MedInvest и другие.",
+          topic1_title: "Шестой уклад",
+          topic1_text: "Переход сейчас, в 2025 году, от 5-ого уклада («люди, создающие удивительные технологии») к шестому («технологии, создающие удивительных людей»). Большие последствия русского мира предпринимателей и уже скоро.",
+          topic2_title: "Взрыв искусственного интеллекта",
+          topic2_text: "Суперкомпьютер ассистент АI мощностью 1-5 петафлопов в кармане каждого третьего потребителя - и бизнеса - к 2030. Карманного суперассистента обмануть невозможно. Он купит только самые изумительные вещи в заданном ценовом диапазоне. Выживут только такие производства волшебного.",
+          topic3_title: "Не-искусственный интеллект",
+          topic3_text: "Всё, что логика, процесс, цифры - это 90% любого бизнеса за пределами стартапов - будет автоматизироваться у всех бизнесов. Единственная реальная дифференциация у бизнеса останется «не-искусственным интеллектом»: ценности, мировоззрение, миссия видение, амбиция, риск аппетит, культура. Там где компьютеру делать нечего. От этого все больше и больше зависит судьба любого бизнеса.",
+          topic4_title: "Для бизнеса",
+          topic4_text: "Это означает что нужно не только делать крутые продукты и услуги, а делать крутых клиентов. Если «клиентоориентированность («делать крутые продукты») было лучшей бизнес моделью в 5-ом укладе, то для 6-ого уклада нужны клиентоцентричность («делать крутых клиентов»). Нужен бизнес с уникально ценной клиентоцентричной идеологией и стратегией.",
+          topic5_title: "Примеры компании",
+          topic5_text: "В 50 разных В2В и В2С отраслях из всего мира с крутой идеологий и клиентоцентричным подходом, успешно обслуживающие массовый рынок.",
+          topic6_title: "А теперь",
+          topic6_text: "Что делать в понедельник, чтобы начать реализовывать всё, что рекомендую в этой презентации.",
+          pricing_title: "Стоимость участия",
+          gold_tier: "Золото",
+          gold_item1: "Первый ряд",
+          gold_item2: "Отдельная регистрация",
+          gold_item3: "Бизнес-ужин с Гарреттом",
+          gold_item4: "Индивидуальная консультация по прорывам вашего бизнеса в 2026",
+          gold_item5: "Презентация",
+          gold_item6: "Кофе-брейк — нетворкинг",
+          gold_item7: "Фотосессия",
+          gold_item8: "Сертификат",
+          silver_tier: "Серебро",
+          silver_item1: "Со второго ряда",
+          silver_item2: "Презентация",
+          silver_item3: "Кофе-брейки",
+          silver_item4: "Фотосессия",
+          silver_item5: "Электронный сертификат",
+          until_22_12: "до 22/12",
+          until_05_01: "до 05/01",
+          until_13_01: "до 13/01",
+          become_partner: "Стать <span class='fw-bold'>партнером</span> мероприятия"
+        },
+        en: {
+          main_title: "keys to the transition of russian business to a new paradigm",
+          date: "January 13 <span class='fw-normal'>2026</span>",
+          location: "AMORA BEACH RESORT PHUKET The sky room",
+          name_first: "Garrett",
+          name_last: "Johnston",
+          country: "/ Ireland /",
+          event_description: "premier business event of the high season<br /><span class='fw-bold fs-2'>2026</span>",
+          buy_tickets: "buy tickets",
+          video_report: "How was it?",
+          interview: "Interview in English",
+          seminar_description: "business master-class in fluent Russian from an era-defining person who speaks and works in 11 languages of the world",
+          name_full: "Garrett Johnston",
+          bio1: "Client strategist, visionary and international expert in B2B and B2C strategic marketing. Irish, born and raised in Dublin.",
+          bio2: "His company has offices in Dublin, Zurich and Moscow.",
+          bio3: "Practitioner with almost 30 years of experience in marketing, sales and customer strategies in 14 countries, across 5 continents. Worked in B2B, B2C and B2G segments.",
+          bio4: "Clients include: MTS, X5 Retail Group, Telenor, Cap Gemini, Tesco, Digicel, Ernst & Young, Cable & Wireless, PwC, Avaya, Ford, Alcatel, RosNano MedInvest and others.",
+          topic1_title: "Sixth Paradigm",
+          topic1_text: "The transition now, in 2025, from the 5th order («people creating amazing technologies») to the sixth («technologies creating amazing people»). The big consequences of the Russian world of entrepreneurs and soon.",
+          topic2_title: "AI Explosion",
+          topic2_text: "Supercomputer AI assistant with 1-5 petaflops power in the pocket of every third consumer - and business - by 2030. The pocket super assistant cannot be deceived. It will only buy the most amazing things in a given price range. Only such magical productions will survive.",
+          topic3_title: "Non-Artificial Intelligence",
+          topic3_text: "Everything that is logic, process, numbers - that's 90% of any business beyond startups - will be automated in all businesses. The only real differentiation for business will remain 'non-artificial intelligence': values, worldview, mission vision, ambition, risk appetite, culture. Where computers have nothing to do. The fate of any business depends more and more on this.",
+          topic4_title: "For Business",
+          topic4_text: "This means that you need not only to create cool products and services, but to create cool customers. If 'customer orientation' ('making cool products') was the best business model in the 5th paradigm, then for the 6th paradigm, 'customer centricity' ('making cool customers') is needed. A business with a uniquely valuable customer-centric ideology and strategy is needed.",
+          topic5_title: "Company Examples",
+          topic5_text: "In 50 different B2B and B2C industries from around the world with great ideology and customer-centric approach, successfully serving the mass market.",
+          topic6_title: "And Now",
+          topic6_text: "What to do on Monday to start implementing everything I recommend in this presentation.",
+          pricing_title: "Participation Cost",
+          gold_tier: "Gold",
+          gold_item1: "First row",
+          gold_item2: "Separate registration",
+          gold_item3: "Business dinner with Garrett",
+          gold_item4: "Individual consultation on your business breakthroughs in 2026",
+          gold_item5: "Presentation",
+          gold_item6: "Coffee break — networking",
+          gold_item7: "Photo session",
+          gold_item8: "Certificate",
+          silver_tier: "Silver",
+          silver_item1: "From the second row",
+          silver_item2: "Presentation",
+          silver_item3: "Coffee breaks",
+          silver_item4: "Photo session",
+          silver_item5: "Electronic certificate",
+          until_22_12: "until 22/12",
+          until_05_01: "until 05/01",
+          until_13_01: "until 13/01",
+          become_partner: "Become a <span class='fw-bold'>partner</span> of the event"
+        },
+        de: {
+          main_title: "schlüssel für den übergang des russischen geschäfts in eine neue ordnung",
+          date: "13. Januar <span class='fw-normal'>2026</span>",
+          location: "AMORA BEACH RESORT PHUKET The sky room",
+          name_first: "Garrett",
+          name_last: "Johnston",
+          country: "/ Irland /",
+          event_description: "business-Meisterklasse in freier russischer Sprache von einem Zeitmenschen, der in 11 Sprachen der Welt spricht und arbeitet<br /><span class='fw-bold fs-2'>2026</span>",
+          buy_tickets: "tickets kaufen",
+          video_report: "Wie war es?",
+          interview: "Interview English auf Englisch",
+          seminar_description: "seminar auf freiem russisch von einem epochenmenschen, der 11 weltsprachen beherrscht und in ihnen arbeitet",
+          name_full: "Garrett Johnston",
+          bio1: "Kundenstratege, Visionär und internationaler Experte für B2B- und B2C-Strategiemarketing. Ire, geboren und aufgewachsen in Dublin.",
+          bio2: "Die Büros seines Unternehmens befinden sich in Dublin, Zürich und Moskau.",
+          bio3: "Praktiker mit fast 30 Jahren Erfahrung in den Bereichen Marketing, Vertrieb und Kundenstrategien in 14 Ländern auf 5 Kontinenten. Arbeitete in B2B-, B2C- und B2G-Segmenten.",
+          bio4: "Zu den Kunden zählen: MTS, X5 Retail Group, Telenor, Cap Gemini, Tesco, Digicel, Ernst & Young, Cable & Wireless, PwC, Avaya, Ford, Alcatel, RosNano MedInvest und andere.",
+          topic1_title: "Sechste Ordnung",
+          topic1_text: "Der Übergang ist jetzt, im Jahr 2025, vom 5. Weg («Menschen, die erstaunliche Technologien schaffen») zum 6. Weg («Technologien, die erstaunliche Menschen erschaffen»). Die großen Folgen der russischen Unternehmerwelt sind schon bald da.",
+          topic2_title: "KI-Explosion",
+          topic2_text: "Supercomputer-KI-Assistent mit 1-5 Petaflops Leistung in der Tasche jedes dritten Verbrauchers - und Unternehmens - bis 2030. Der Taschen-Super-Assistent kann nicht getäuscht werden. Er kauft nur die erstaunlichsten Dinge in einem bestimmten Preissegment. Nur solche magischen Produktionen werden überleben.",
+          topic3_title: "Nicht-künstliche Intelligenz",
+          topic3_text: "Alles, was Logik, Prozess, Zahlen ist - das sind 90% jedes Unternehmens jenseits von Startups - wird in allen Unternehmen automatisiert. Die einzige echte Differenzierung für Unternehmen bleibt die 'nicht-künstliche Intelligenz': Werte, Weltanschauung, Missionsvision, Ambition, Risikoappetit, Kultur. Wo Computer nichts zu tun haben. Davon hängt das Schicksal jedes Unternehmens immer mehr ab.",
+          topic4_title: "Für Unternehmen",
+          topic4_text: "Das bedeutet, dass man nicht nur coole Produkte und Dienstleistungen machen muss, sondern auch coole Kunden. Wenn 'Kundenorientierung' ('coole Produkte machen') das beste Geschäftsmodell in der 5. Ordnung war, dann wird für die 6. Ordnung 'Kundenzentrierung' ('coole Kunden machen') benötigt. Es wird ein Unternehmen mit einer einzigartig wertvollen kundenzentrierten Ideologie und Strategie benötigt.",
+          topic5_title: "Unternehmensbeispiele",
+          topic5_text: "In 50 verschiedenen B2B- und B2C-Branchen aus der ganzen Welt mit großartiger Ideologie und kundenzentriertem Ansatz, die erfolgreich den Massenmarkt bedienen.",
+          topic6_title: "Und Jetzt",
+          topic6_text: "Was am Montag zu tun ist, um alles umzusetzen, was ich in dieser Präsentation empfehle.",
+          pricing_title: "Teilnahmekosten",
+          gold_tier: "Gold",
+          gold_item1: "Erste Reihe",
+          gold_item2: "Separate Registrierung",
+          gold_item3: "Business-Dinner mit Garrett",
+          gold_item4: "Individuelle Beratung zu den Durchbrüchen Ihres Unternehmens in 2026",
+          gold_item5: "Präsentation",
+          gold_item6: "Kaffeepause — Networking",
+          gold_item7: "Fotosession",
+          gold_item8: "Zertifikat",
+          silver_tier: "Silber",
+          silver_item1: "Aus der zweiten Reihe",
+          silver_item2: "Präsentation",
+          silver_item3: "Kaffeepausen",
+          silver_item4: "Fotosession",
+          silver_item5: "Elektronisches Zertifikat",
+          until_22_12: "bis 22/12",
+          until_05_01: "bis 05/01",
+          until_13_01: "bis 13/01",
+          become_partner: "Werden Sie <span class='fw-bold'>Partner</span> der Veranstaltung"
+        }
+      };
+
+      // Ссылки на билеты для разных языков
+      const ticketLinks = {
+        ru: "https://cbiletom.ru/event.php?event=11670",
+        en: "https://cbiletom.ru/event.php?event=11950",
+        de: "https://cbiletom.ru/event.php?event=11951"
+      };
+
+      // Функция для изменения языка
+      function changeLanguage(lang) {
+        // Обновляем атрибут lang у html элемента
+        document.documentElement.lang = lang;
+        
+        // Получаем все элементы с атрибутом data-translate
+        const elements = document.querySelectorAll('[data-translate]');
+        
+        // Обновляем текст для каждого элемента
+        elements.forEach(element => {
+          const key = element.getAttribute('data-translate');
+          if (translations[lang] && translations[lang][key]) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+              element.value = translations[lang][key];
+            } else {
+              element.innerHTML = translations[lang][key];
+            }
+          }
+        });
+        
+        // Обновляем ссылки для кнопок "Купить билеты"
+        const buyTicketButtons = document.querySelectorAll('a[data-translate="buy_tickets"]');
+        buyTicketButtons.forEach(button => {
+          button.href = ticketLinks[lang];
+          
+          // Также обновляем data-атрибуты для ссылок в карточках
+          button.setAttribute('data-ticket-ru', ticketLinks.ru);
+          button.setAttribute('data-ticket-en', ticketLinks.en);
+          button.setAttribute('data-ticket-de', ticketLinks.de);
+        });
+        
+        // Обновляем активную кнопку языка
+        document.querySelectorAll('.language-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        document.querySelector(`.language-btn[data-lang="${lang}"]`).classList.add('active');
+        
+        // Сохраняем выбранный язык в localStorage
+        localStorage.setItem('preferred-language', lang);
+      }
+
+      // Инициализация языка при загрузке страницы
+      document.addEventListener('DOMContentLoaded', function() {
+        // Проверяем сохраненный язык или используем русский по умолчанию
+        const savedLang = localStorage.getItem('preferred-language') || 'ru';
+        changeLanguage(savedLang);
+        
+        // Добавляем обработчики событий для кнопок переключения языка
+        document.querySelectorAll('.language-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
