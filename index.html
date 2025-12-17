@@ -78,8 +78,179 @@
       .video-btn i {
         font-size: 1.3rem;
       }
-      
+
+      /* Блок для размещения видео */
+      .video-showcase-section {
+        background: linear-gradient(135deg, #1c174e 0%, #2a2056 100%);
+        padding: 60px 20px;
+        margin: 0;
+      }
+
+      .video-showcase-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .video-showcase-title {
+        text-align: center;
+        color: white;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+      }
+
+      .video-showcase-title span {
+        color: #f6931d;
+      }
+
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .video-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #626d93;
+        border: 2px solid #f6931d;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 24px rgba(246, 147, 29, 0.15);
+      }
+
+      .video-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 32px rgba(246, 147, 29, 0.3);
+      }
+
+      .video-thumbnail {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: #1c174e url('https://img.youtube.com/vi/pB96kJHyloU/maxresdefault.jpg') center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .video-thumbnail::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle, rgba(246, 147, 29, 0.3) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .video-card:hover .video-thumbnail::before {
+        opacity: 1;
+      }
+
+      .video-play-icon {
+        font-size: 4rem;
+        color: #f6931d;
+        transition: transform 0.3s ease;
+        z-index: 1;
+      }
+
+      .video-card:hover .video-play-icon {
+        transform: scale(1.2);
+      }
+
+      .video-info {
+        padding: 20px;
+        color: white;
+      }
+
+      .video-info h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #f6931d;
+      }
+
+      .video-info p {
+        margin: 0 0 15px 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      .video-card-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: #f6931d;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+
+      .video-card-btn:hover {
+        background-color: #e08417;
+        transform: scale(1.05);
+      }
+
+      .video-card-btn i {
+        font-size: 1.1rem;
+      }
+
+      /* Альтернативный вид для встроенного видео */
+      .video-embed-section {
+        background: rgba(246, 147, 29, 0.1);
+        padding: 30px;
+        border-radius: 10px;
+        margin-top: 30px;
+        border-left: 4px solid #f6931d;
+      }
+
+      .video-embed-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .video-embed-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 10px;
+      }
+
       @media (max-width: 768px) {
+        .video-showcase-title {
+          font-size: 1.8rem;
+        }
+
+        .video-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
         .video-buttons {
           flex-direction: column;
           align-items: center;
@@ -99,6 +270,10 @@
           justify-content: center;
           margin-bottom: 20px;
           margin-top: 10px;
+        }
+
+        .video-showcase-section {
+          padding: 40px 15px;
         }
       }
     </style>
@@ -131,6 +306,7 @@
           </h2>
         </div>
 
+
         <div class="row align-items-center g-5">
           <div class="col-lg-6 text-center">
             <img
@@ -140,6 +316,7 @@
               style="max-height: 450px; object-fit: cover"
             />
           </div>
+
 
           <div
             class="col-lg-6 d-flex flex-column justify-content-between justify-content-lg-between text-center text-lg-start py-3 py-lg-0"
@@ -152,6 +329,7 @@
               </h3>
             </div>
 
+
             <div
               class="d-flex justify-content-center justify-content-lg-start align-items-center mb-4"
             >
@@ -162,6 +340,7 @@
                 style="max-width: 90px"
               />
             </div>
+
 
             <div
               class="d-flex justify-content-center justify-content-lg-start align-items-center"
@@ -175,6 +354,7 @@
       </div>
     </section>
 
+
     <section class="hero-section py-5" style="background-color: #1c174e">
       <div class="container text-center">
         <h1 class="display-4 fw-bold text-white text-uppercase mb-0" data-translate="name_first">Гарретт</h1>
@@ -182,16 +362,16 @@
           Джонстон
         </h1>
 
+
         <p class="fs-3 text-white text-uppercase opacity-75 mb-4" data-translate="country">
           / Ирландия /
         </p>
 
+
         <p class="fs-3 text-white text-uppercase mb-4" data-translate="event_description">
           топовое бизнес-мероприятие высокого сезона<br />
           <span class="fw-bold fs-2">2026</span>
-        </p>
-
-        <a
+        </p>        <a
           href="https://cbiletom.ru/event.php?event=11670"
           class="btn btn-lg px-5 py-3 text-uppercase text-white fw-bold mb-3"
           style="background-color: #f6931d"
@@ -200,24 +380,6 @@
         >
           купить билеты
         </a>
-        
-        <!-- Новые кнопки для видео -->
-        <div class="video-buttons">
-          <a href="./video/event.mp4" 
-             target="_blank" 
-             class="video-btn"
-             data-translate="video_report"
-             id="videoReportBtn">
-            <i class="fas fa-video"></i> Видеоотчет
-          </a>
-          <a href="https://youtu.be/pB96kJHyloU" 
-             target="_blank" 
-             class="video-btn"
-             data-translate="interview"
-             id="interviewBtn">
-            <i class="fas fa-play-circle"></i> Интервью на английском
-          </a>
-        </div>
 
         <p class="fs-4 text-uppercase text-white opacity-75 w-75 mx-auto mt-4" data-translate="seminar_description">
           бизнес мастер-класс на свободном русском языке от человека-эпохи, владеющего и
@@ -225,6 +387,59 @@
         </p>
       </div>
     </section>
+    <!-- БЛОК ДЛЯ РАЗМЕЩЕНИЯ ВИДЕО -->
+    <section class="video-showcase-section">
+      <div class="video-showcase-container">
+        <h2 class="video-showcase-title" data-translate="video_gallery_title">
+          媒体<span>Галерея</span>
+        </h2>
+        
+        <div class="video-grid">
+          <!-- Видео 1 - Видеоприглашение -->
+          <div class="video-card">
+            <div class="video-thumbnail" onclick="playVideo('./video/rus.mp4')">
+              <i class="fas fa-play-circle video-play-icon"></i>
+            </div>
+            <div class="video-info">
+              <h3 data-translate="video_card1_title">Видеоприглашение</h3>
+              <p data-translate="video_card1_desc">Специальное видеоприглашение на мероприятие с рассказом о том, что вас ждет.</p>
+              <a href="./video/rus.mp4" target="_blank" class="video-card-btn" id="invitationVideoBtn">
+                <i class="fas fa-play"></i> Смотреть
+              </a>
+            </div>
+          </div>
+
+          <!-- Видео 2 - Как это было -->
+          <div class="video-card">
+            <div class="video-thumbnail" onclick="playVideo('./video/event.mp4')">
+              <i class="fas fa-play-circle video-play-icon"></i>
+            </div>
+            <div class="video-info">
+              <h3 data-translate="video_card2_title">Как это было</h3>
+              <p data-translate="video_card2_desc">Видеоотчет с предыдущего мероприятия. Впечатления участников и ключевые моменты презентации.</p>
+              <a href="./video/event.mp4" target="_blank" class="video-card-btn">
+                <i class="fas fa-play"></i> Смотреть
+              </a>
+            </div>
+          </div>
+
+          <!-- Видео 3 - Интервью на английском -->
+          <div class="video-card">
+            <div class="video-thumbnail" onclick="playInterviewVideo()">
+              <i class="fas fa-play-circle video-play-icon"></i>
+            </div>
+            <div class="video-info">
+              <h3 data-translate="video_card3_title">Интервью на английском</h3>
+              <p data-translate="video_card3_desc">Эксклюзивное интервью с Гарреттом Джонстоном на английском языке о тенденциях в бизнесе и стратегиях развития.</p>
+              <a href="https://www.youtube.com/embed/pB96kJHyloU" target="_blank" class="video-card-btn" onclick="playInterviewVideo(); return false;">
+                <i class="fas fa-play"></i> Смотреть
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="py-5" style="background-color: #9a9eba">
       <div class="container">
         <div class="row align-items-center g-5">
@@ -236,10 +451,12 @@
             />
           </div>
 
+
           <div class="col-lg-8">
             <h2 class="text-white fw-bold mb-4 text-uppercase" data-translate="name_full">
               Гарретт Джонстон
             </h2>
+
 
             <p class="text-white fs-4 lh-lg opacity-90" data-translate="bio1">
               Клиентский стратег, визионер и международный эксперт в области B2B
@@ -247,15 +464,18 @@
               Дублине.
             </p>
 
+
             <p class="text-white fs-4 lh-lg opacity-90" data-translate="bio2">
               Офисы его компании работают в Дублине, Цюрихе и Москве.
             </p>
+
 
             <p class="text-white fs-4 lh-lg opacity-90" data-translate="bio3">
               Практик с почти 30-летним стажем работы в области маркетинга,
               продаж и клиентских стратегий в 14 странах, на 5 континентах.
               Работал в B2B, B2C и B2G сегментах.
             </p>
+
 
             <p class="text-white fs-4 lh-lg opacity-90" data-translate="bio4">
               В числе клиентов: МТС, Х5 Retail Group, Telenor, Cap Gemini,
@@ -277,7 +497,9 @@
           />
         </div>
 
+
         <h2 class="text-white fw-bold text-uppercase mb-3" data-translate="topic1_title">Шестой уклад</h2>
+
 
         <p class="lead text-white opacity-75" data-translate="topic1_text">
           Переход сейчас, в 2025 году, от 5-ого уклада («люди, создающие
@@ -295,9 +517,11 @@
           />
         </div>
 
+
         <h2 class="text-white fw-bold text-uppercase mb-3" data-translate="topic2_title">
           Взрыв искусственного интеллекта
         </h2>
+
 
         <p class="lead text-white opacity-75" data-translate="topic2_text">
           Суперкомпьютер ассистент АI мощностью 1-5 петафлопов в кармане каждого
@@ -317,9 +541,11 @@
           />
         </div>
 
+
         <h2 class="text-white fw-bold text-uppercase mb-3" data-translate="topic3_title">
           Не-искусственный интеллект
         </h2>
+
 
         <p class="lead text-white opacity-75" data-translate="topic3_text">
           Всё, что логика, процесс, цифры - это 90% любого бизнеса за пределами
@@ -340,7 +566,9 @@
           />
         </div>
 
+
         <h2 class="text-white fw-bold text-uppercase mb-3" data-translate="topic4_title">Для бизнеса</h2>
+
 
         <p class="lead text-white opacity-75" data-translate="topic4_text">
           Это означает что нужно не только делать крутые продукты и услуги, а
@@ -360,7 +588,9 @@
           />
         </div>
 
+
         <h2 class="text-white fw-bold text-uppercase mb-3" data-translate="topic5_title">Примеры компании</h2>
+
 
         <p class="lead text-white opacity-75" data-translate="topic5_text">
           В 50 разных В2В и В2С отраслях из всего мира с крутой идеологий и
@@ -377,7 +607,9 @@
           />
         </div>
 
+
         <h2 class="text-white fw-bold text-uppercase mb-3" data-translate="topic6_title">А теперь</h2>
+
 
         <p class="lead text-white opacity-75" data-translate="topic6_text">
           Что делать в понедельник, чтобы начать реализовывать всё, что
@@ -386,12 +618,14 @@
       </div>
     </section>
 
+
     <section class="py-5" style="background-color: #9a9eba">
       <div class="container text-center mb-5">
         <h2 class="text-white text-uppercase fw-bold display-5" data-translate="pricing_title">
           Стоимость участия
         </h2>
       </div>
+
 
       <div class="container">
         <div class="row g-4 justify-content-center">
@@ -401,6 +635,7 @@
               style="background-color: #626d93; border: 1px solid #f6931d"
             >
               <h3 class="text-white fw-bold text-uppercase mb-4" data-translate="gold_tier">Золото</h3>
+
 
               <ul class="list-unstyled text-white fs-5 mb-4">
                 <li class="mb-2" data-translate="gold_item1">Первый ряд</li>
@@ -413,6 +648,7 @@
                 <li class="mb-2" data-translate="gold_item8">Сертификат</li>
               </ul>
 
+
               <div
                 class="text-white fs-5 mb-4 mt-auto"
                 style="min-height: 70px"
@@ -421,6 +657,7 @@
                 <p class="mb-1"><strong data-translate="until_05_01">до 05/01</strong> — 179 000 ₽</p>
                 <p class="mb-0"><strong data-translate="until_13_01">до 13/01</strong> — 209 000 ₽</p>
               </div>
+
 
               <a
                 href="https://cbiletom.ru/event.php?event=11670"
@@ -436,12 +673,14 @@
             </div>
           </div>
 
+
           <div class="col-md-4">
             <div
               class="card h-100 text-center p-4 shadow-lg d-flex flex-column"
               style="background-color: #626d93; border: 1px solid #f6931d"
             >
               <h3 class="text-white fw-bold text-uppercase mb-4" data-translate="silver_tier">Серебро</h3>
+
 
               <ul class="list-unstyled text-white fs-5 mb-4">
                 <li class="mb-2" data-translate="silver_item1">Со второго ряда</li>
@@ -451,6 +690,7 @@
                 <li class="mb-2" data-translate="silver_item5">Электронный сертификат</li>
               </ul>
 
+
               <div
                 class="text-white fs-5 mb-4 mt-auto"
                 style="min-height: 70px"
@@ -459,6 +699,7 @@
                 <p class="mb-1"><strong data-translate="until_05_01">до 05/01</strong> — 78 000 ₽</p>
                 <p class="mb-0"><strong data-translate="until_13_01">до 13/01</strong> — 98 000 ₽</p>
               </div>
+
 
               <a
                 href="https://cbiletom.ru/event.php?event=11670"
@@ -478,6 +719,7 @@
     </section>
 
 
+
     <footer
       class="py-5 text-center"
       style="background-color: #1c174e; color: white"
@@ -489,6 +731,7 @@
         style="max-width: 150px"
       />
 
+
       <div
         class="d-flex justify-content-center align-items-center mb-4 flex-wrap"
       >
@@ -496,6 +739,7 @@
           Стать <span class="fw-bold">партнером</span> мероприятия
         </p>
       </div>
+
 
       <div class="d-flex justify-content-center align-items-center">
         <a
@@ -513,6 +757,7 @@
         </a>
       </div>
     </footer>
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -571,7 +816,14 @@
           until_22_12: "до 22/12",
           until_05_01: "до 05/01",
           until_13_01: "до 13/01",
-          become_partner: "Стать <span class='fw-bold'>партнером</span> мероприятия"
+          become_partner: "Стать <span class='fw-bold'>партнером</span> мероприятия",
+          video_gallery_title: "Медиа",
+          video_card1_title: "Видеоприглашение",
+          video_card1_desc: "Специальное видеоприглашение на мероприятие с рассказом о том, что вас ждет.",
+          video_card2_title: "Как это было",
+          video_card2_desc: "Видеоотчет с предыдущего мероприятия. Впечатления участников и ключевые моменты презентации.",
+          video_card3_title: "Интервью на английском",
+          video_card3_desc: "Эксклюзивное интервью с Гарреттом Джонстоном на английском языке о тенденциях в бизнесе и стратегиях развития."
         },
         en: {
           main_title: "keys to the transition of russian business to a new paradigm",
@@ -621,7 +873,14 @@
           until_22_12: "until 22/12",
           until_05_01: "until 05/01",
           until_13_01: "until 13/01",
-          become_partner: "Become a <span class='fw-bold'>partner</span> of the event"
+          become_partner: "Become a <span class='fw-bold'>partner</span> of the event",
+          video_gallery_title: "Media",
+          video_card1_title: "Video Invitation",
+          video_card1_desc: "Special video invitation to the event with a story about what awaits you.",
+          video_card2_title: "How it was",
+          video_card2_desc: "Video report from the previous event. Impressions of participants and key moments of the presentation.",
+          video_card3_title: "Interview in English",
+          video_card3_desc: "Exclusive interview with Garrett Johnston in English about business trends and development strategies."
         },
         de: {
           main_title: "schlüssel für den übergang des russischen geschäfts in eine neue ordnung",
@@ -633,7 +892,7 @@
           event_description: "business-Meisterklasse in freier russischer Sprache von einem Zeitmenschen, der in 11 Sprachen der Welt spricht und arbeitet<br /><span class='fw-bold fs-2'>2026</span>",
           buy_tickets: "tickets kaufen",
           video_report: "Wie war es?",
-          interview: "Interview English auf Englisch",
+          interview: "Interview auf Englisch",
           seminar_description: "seminar auf freiem russisch von einem epochenmenschen, der 11 weltsprachen beherrscht und in ihnen arbeitet",
           name_full: "Garrett Johnston",
           bio1: "Kundenstratege, Visionär und internationaler Experte für B2B- und B2C-Strategiemarketing. Ire, geboren und aufgewachsen in Dublin.",
@@ -671,9 +930,17 @@
           until_22_12: "bis 22/12",
           until_05_01: "bis 05/01",
           until_13_01: "bis 13/01",
-          become_partner: "Werden Sie <span class='fw-bold'>Partner</span> der Veranstaltung"
+          become_partner: "Werden Sie <span class='fw-bold'>Partner</span> der Veranstaltung",
+          video_gallery_title: "Medien",
+          video_card1_title: "Videoeinladung",
+          video_card1_desc: "Spezielle Videoeinladung zur Veranstaltung mit einer Geschichte darüber, was Sie erwartet.",
+          video_card2_title: "Wie es war",
+          video_card2_desc: "Videobericht der letzten Veranstaltung. Eindrücke der Teilnehmer und Höhepunkte der Präsentation.",
+          video_card3_title: "Interview auf Englisch",
+          video_card3_desc: "Exklusives Interview mit Garrett Johnston auf Englisch über Geschäftstrends und Entwicklungsstrategien."
         }
       };
+
 
       // Ссылки на билеты для разных языков
       const ticketLinks = {
@@ -681,6 +948,7 @@
         en: "https://cbiletom.ru/event.php?event=11950",
         de: "https://cbiletom.ru/event.php?event=11951"
       };
+
 
       // Функция для изменения языка
       function changeLanguage(lang) {
@@ -723,17 +991,47 @@
         localStorage.setItem('preferred-language', lang);
       }
 
+      // Функция для скролла к встроенному видео
+      function scrollToVideo() {
+        const video = document.getElementById('embeddedVideo');
+        video.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Функция для обновления ссылки видеоприглашения в зависимости от языка
+      function updateInvitationVideoLink(lang) {
+        const invitationBtn = document.getElementById('invitationVideoBtn');
+        if (invitationBtn) {
+          if (lang === 'ru') {
+            invitationBtn.href = './video/rus.mp4';
+          } else if (lang === 'en' || lang === 'de') {
+            invitationBtn.href = './video/eng.mp4';
+          }
+        }
+      }
+
+      // Функция для воспроизведения видео
+      function playVideo(url) {
+        window.open(url, '_blank');
+      }
+
+      // Функция для воспроизведения видео интервью
+      function playInterviewVideo() {
+        window.open('https://www.youtube.com/watch?v=pB96kJHyloU', '_blank');
+      }
+
       // Инициализация языка при загрузке страницы
       document.addEventListener('DOMContentLoaded', function() {
         // Проверяем сохраненный язык или используем русский по умолчанию
         const savedLang = localStorage.getItem('preferred-language') || 'ru';
         changeLanguage(savedLang);
+        updateInvitationVideoLink(savedLang);
         
         // Добавляем обработчики событий для кнопок переключения языка
         document.querySelectorAll('.language-btn').forEach(btn => {
           btn.addEventListener('click', function() {
             const lang = this.getAttribute('data-lang');
             changeLanguage(lang);
+            updateInvitationVideoLink(lang);
           });
         });
       });
