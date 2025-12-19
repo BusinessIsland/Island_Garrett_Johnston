@@ -130,13 +130,31 @@
       .video-thumbnail {
         width: 100%;
         aspect-ratio: 16 / 9;
-        background: #1c174e url('https://img.youtube.com/vi/pB96kJHyloU/maxresdefault.jpg') center/cover;
+        background: #1c174e;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
         overflow: hidden;
       }
+
+        .video-thumb-rus {
+          background-image: url('./assets/images/thumb-rus.jpg');
+          background-position: center;
+          background-size: cover;
+        }
+
+        .video-thumb-event {
+          background-image: url('./assets/images/thumb-event.jpg');
+          background-position: center;
+          background-size: cover;
+        }
+
+        .video-thumb-interview {
+          background-image: url('https://img.youtube.com/vi/pB96kJHyloU/maxresdefault.jpg');
+          background-position: center;
+          background-size: cover;
+        }
 
       .video-thumbnail::before {
         content: '';
@@ -391,13 +409,13 @@
     <section class="video-showcase-section">
       <div class="video-showcase-container">
         <h2 class="video-showcase-title" data-translate="video_gallery_title">
-          媒体<span>Галерея</span>
+          <span>Медиа</span>
         </h2>
         
         <div class="video-grid">
           <!-- Видео 1 - Видеоприглашение -->
           <div class="video-card">
-            <div class="video-thumbnail" onclick="playVideo('./video/rus.mp4')">
+            <div class="video-thumbnail video-thumb-rus" onclick="playVideo('./video/rus.mp4')">
               <i class="fas fa-play-circle video-play-icon"></i>
             </div>
             <div class="video-info">
@@ -411,7 +429,7 @@
 
           <!-- Видео 2 - Как это было -->
           <div class="video-card">
-            <div class="video-thumbnail" onclick="playVideo('./video/event.mp4')">
+            <div class="video-thumbnail video-thumb-event" onclick="playVideo('./video/event.mp4')">
               <i class="fas fa-play-circle video-play-icon"></i>
             </div>
             <div class="video-info">
@@ -425,7 +443,7 @@
 
           <!-- Видео 3 - Интервью на английском -->
           <div class="video-card">
-            <div class="video-thumbnail" onclick="playInterviewVideo()">
+            <div class="video-thumbnail video-thumb-interview" onclick="playInterviewVideo()">
               <i class="fas fa-play-circle video-play-icon"></i>
             </div>
             <div class="video-info">
