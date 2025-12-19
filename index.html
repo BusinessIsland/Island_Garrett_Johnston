@@ -120,6 +120,9 @@
         border: 2px solid #f6931d;
         transition: all 0.3s ease;
         box-shadow: 0 8px 24px rgba(246, 147, 29, 0.15);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
       }
 
       .video-card:hover {
@@ -139,13 +142,13 @@
       }
 
         .video-thumb-rus {
-          background-image: url('./assets/images/thumb-rus.jpg');
+          background-image: url('./assets/images/thumb-rus.png');
           background-position: center;
           background-size: cover;
         }
 
         .video-thumb-event {
-          background-image: url('./assets/images/thumb-event.jpg');
+          background-image: url('./assets/images/thumb-event.png');
           background-position: center;
           background-size: cover;
         }
@@ -186,6 +189,9 @@
       .video-info {
         padding: 20px;
         color: white;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
       }
 
       .video-info h3 {
@@ -201,6 +207,7 @@
         font-size: 0.95rem;
         line-height: 1.5;
         color: rgba(255, 255, 255, 0.85);
+        flex-grow: 1;
       }
 
       .video-card-btn {
