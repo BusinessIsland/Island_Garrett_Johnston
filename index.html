@@ -242,37 +242,6 @@
             border-radius: 10px;
         }
         
-        @media (max-width: 768px) {
-            .video-showcase-title {
-                font-size: 1.8rem;
-            }
-            .video-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .video-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            .video-btn {
-                width: 100%;
-                max-width: 300px;
-            }
-            .language-switcher {
-                position: relative;
-                top: 0;
-                right: 0;
-                display: flex;
-                justify-content: center;
-                margin-bottom: 20px;
-                margin-top: 10px;
-            }
-            .video-showcase-section {
-                padding: 40px 15px;
-            }
-        }
-
         /* Унифицированные стили для кнопок покупки */
         .ticket-buttons-container {
             display: flex;
@@ -325,29 +294,130 @@
             box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
         }
 
-        /* Для карточек тарифов - ИСПРАВЛЕННЫЙ стиль */
+        /* Для карточек тарифов */
         .pricing-card-buttons {
             display: flex;
             flex-direction: column;
             gap: 10px;
             width: 100%;
-            margin-top: 15px; /* Уменьшено */
-            padding-top: 10px; /* Добавлен отступ сверху */
+            margin-top: 15px;
+            padding-top: 10px;
         }
 
-        /* ИСПРАВЛЕНИЕ: убрали фиксированную высоту для ценового блока */
-        .pricing-price-section {
-            margin-bottom: 15px !important; /* Уменьшен отступ снизу */
-            padding-bottom: 10px;
+        /* Стили для карточек тарифов */
+        .pricing-card {
+            border: 2px solid;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-footer {
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Цвета для разных тарифов */
+        .vip-card {
+            border-color: #ffd700;
+            background: linear-gradient(135deg, #1c174e 0%, #3a2e66 100%);
+        }
+        
+        .gold-card {
+            border-color: #ffa500;
+            background: linear-gradient(135deg, #1c174e 0%, #3a2e66 100%);
+        }
+        
+        .silver-card {
+            border-color: #c0c0c0;
+            background: linear-gradient(135deg, #1c174e 0%, #3a2e66 100%);
+        }
+        
+        .bronze-card {
+            border-color: #cd7f32;
+            background: linear-gradient(135deg, #1c174e 0%, #3a2e66 100%);
+        }
+        
+        /* Метки тарифов */
+        .tier-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .vip-badge {
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #1c174e;
+        }
+        
+        .gold-badge {
+            background: linear-gradient(45deg, #ffa500, #ffc966);
+            color: #1c174e;
+        }
+        
+        .silver-badge {
+            background: linear-gradient(45deg, #c0c0c0, #e6e6e6);
+            color: #1c174e;
+        }
+        
+        .bronze-badge {
+            background: linear-gradient(45deg, #cd7f32, #e6a95c);
+            color: #1c174e;
+        }
+        
+        /* Цены */
+        .price-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        
+        .date-period {
+            color: #ffffff !important; /* Оранжевый цвет как у кнопок */
+            font-weight: bold;
         }
 
-        /* Уменьшаем отступы для списков в Silver тарифе */
-        .card ul {
-            margin-bottom: 15px !important; /* Было mb-4 */
-        }
-
-        .card ul li {
-            margin-bottom: 8px !important; /* Уменьшен отступ между пунктами */
+        .price-value {
+            font-weight: bold;
+            color: #f6931d;
+            font-size: 1.2rem;
         }
 
         @media (max-width: 768px) {
@@ -361,6 +431,34 @@
             }
             .pricing-card-buttons {
                 margin-top: 10px;
+            }
+            .language-switcher {
+                position: relative;
+                top: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+                margin-top: 10px;
+            }
+            .video-showcase-section {
+                padding: 40px 15px;
+            }
+            .video-showcase-title {
+                font-size: 1.8rem;
+            }
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .video-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-btn {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -413,7 +511,7 @@
             
             <!-- Унифицированный контейнер кнопок -->
             <div class="ticket-buttons-container">
-                <a href="https://cbiletom.ru/event.php?event=11670" class="ticket-btn ticket-btn-primary" data-translate="buytickets" id="buyTicketsBtn">Купить билеты</a>
+                <a href="https://phuket.qtickets.events/203866-biznes-master-klass-klyuchi-k-perekhodu-russkogo-biznesa-v-novyy-uklad" class="ticket-btn ticket-btn-primary" data-translate="buytickets" id="buyTicketsBtn">Купить билеты</a>
                 <a href="https://arbipay.online/?customer=caa5ac97-7972-45cd-b76e-062e46b62c3e" class="ticket-btn ticket-btn-baths" data-translate="buybaths">Купить билет в батах</a>
             </div>
             
@@ -553,51 +651,159 @@
         </div>
         <div class="container">
             <div class="row g-4 justify-content-center">
-                <!-- Gold Tier -->
-                <div class="col-md-4">
-                    <div class="card h-100 text-center p-4 shadow-lg d-flex flex-column" style="background-color: #626d93; border: 1px solid #f6931d;">
-                        <h3 class="text-white fw-bold text-uppercase mb-4" data-translate="goldtier">Gold</h3>
-                        <ul class="list-unstyled text-white fs-5 mb-4">
-                            <li class="mb-2" data-translate="golditem1">Первая ряд</li>
-                            <li class="mb-2" data-translate="golditem2">Отдельная регистрация</li>
-                            <li class="mb-2" data-translate="golditem3">Бизнес-ужин с Garrett</li>
-                            <li class="mb-2" data-translate="golditem4">Индивидуальная консультация по прорывам вашего бизнеса в 2026</li>
-                            <li class="mb-2" data-translate="golditem5">Презентация</li>
-                            <li class="mb-2" data-translate="golditem6">Кофе-брейк networking</li>
-                            <li class="mb-2" data-translate="golditem7">Фотосессия</li>
-                            <li class="mb-2" data-translate="golditem8">Сертификат</li>
-                        </ul>
-                        <div class="text-white fs-5 mb-4 mt-auto" style="min-height: 70px;">
-                            <p class="mb-1"><strong data-translate="until2212">до 22.12</strong> 149 000</p>
-                            <p class="mb-1"><strong data-translate="until0501">до 05.01</strong> 179 000</p>
-                            <p class="mb-0"><strong data-translate="until1301">до 13.01</strong> 209 000</p>
+                <!-- VIP Tier -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="pricing-card vip-card h-100">
+                        <div class="card-header">
+                            <div class="tier-badge vip-badge" data-translate="viptier">VIP</div>
+                            <h4 class="text-white fw-bold">Премиум пакет</h4>
                         </div>
-                        <div class="pricing-card-buttons">
-                            <a href="https://cbiletom.ru/event.php?event=11670" class="ticket-btn ticket-btn-primary" data-translate="buytickets" data-ticket-ru="https://cbiletom.ru/event.php?event=11670" data-ticket-en="https://cbiletom.ru/event.php?event=11950" data-ticket-de="https://cbiletom.ru/event.php?event=11951">Купить билеты</a>
-                            <a href="https://arbipay.online/?customer=caa5ac97-7972-45cd-b76e-062e46b62c3e" class="ticket-btn ticket-btn-baths" data-translate="buybaths">Купить билет в батах</a>
+                        <div class="card-body">
+                            <ul class="list-unstyled text-white mb-4 flex-grow-1">
+                                <li class="mb-2" data-translate="vipitem1">Первый ряд</li>
+                                <li class="mb-2" data-translate="vipitem2">Отдельная регистрация</li>
+                                <li class="mb-2" data-translate="vipitem3">Бизнес-ужин с Garrett</li>
+                                <li class="mb-2" data-translate="vipitem4">Индивидуальная консультация по прорывам вашего бизнеса в 2026</li>
+                                <li class="mb-2" data-translate="vipitem5">Презентация</li>
+                                <li class="mb-2" data-translate="vipitem6">Кофе-брейк networking c Гарретом</li>
+                                <li class="mb-2" data-translate="vipitem7">Фотосессия</li>
+                                <li class="mb-2" data-translate="vipitem8">Сертификат</li>
+                            </ul>
+                            <div class="price-container">
+                                <div class="price-item">
+                                    <span class = "date-period" data-translate="until2212">до 01.01</span>
+                                    <span class="price-value">148 000 ₽</span>
+                                </div>
+                                <div class="price-item">
+                                    <span class = "date-period" data-translate="until0501">до 13.01</span>
+                                    <span class="price-value">178 000 ₽</span>
+                                </div>
+                                <div class="price-item">
+                                    <span class = "date-period" data-translate="until1301">до 16.01</span>
+                                    <span class="price-value">209 000 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="pricing-card-buttons">
+                                <a href="https://phuket.qtickets.events/203866-biznes-master-klass-klyuchi-k-perekhodu-russkogo-biznesa-v-novyy-uklad" class="ticket-btn ticket-btn-primary" data-translate="buytickets" data-ticket-ru="https://phuket.qtickets.events/203866-biznes-master-klass-klyuchi-k-perekhodu-russkogo-biznesa-v-novyy-uklad" data-ticket-en="https://cbiletom.ru/event.php?event=11950" data-ticket-de="https://cbiletom.ru/event.php?event=11951">Купить билеты</a>
+                                <a href="https://arbipay.online/?customer=caa5ac97-7972-45cd-b76e-062e46b62c3e" class="ticket-btn ticket-btn-baths" data-translate="buybaths">Купить билет в батах</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gold Tier -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="pricing-card gold-card h-100">
+                        <div class="card-header">
+                            <div class="tier-badge gold-badge" data-translate="goldtier">Gold</div>
+                            <h4 class="text-white fw-bold">Золотой пакет</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled text-white mb-4 flex-grow-1">
+                                <li class="mb-2" data-translate="golditem1">Рассадка на стулья близко к сцене 2,3,4 ряды</li>
+                                <li class="mb-2" data-translate="golditem2">Презентация</li>
+                                <li class="mb-2" data-translate="golditem3">Кофе-брейк networking</li>
+                                <li class="mb-2" data-translate="golditem4">Фотосессия</li>
+                                <li class="mb-2" data-translate="golditem5">Сертификат</li>
+                            </ul>
+                            <div class="price-container">
+                                <div class="price-item">
+                                    <span class = "date-period" data-translate="until2212">до 01.01</span>
+                                    <span class="price-value">78 000 ₽</span>
+                                </div>
+                                <div class="price-item">
+                                    <span class = "date-period" data-translate="until0501">до 13.01</span>
+                                    <span class="price-value">98 000 ₽</span>
+                                </div>
+                                <div class="price-item">
+                                    <span class = "date-period" data-translate="until1301">до 16.01</span>
+                                    <span class="price-value">108 000 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="pricing-card-buttons">
+                                <a href="https://phuket.qtickets.events/203866-biznes-master-klass-klyuchi-k-perekhodu-russkogo-biznesa-v-novyy-uklad" class="ticket-btn ticket-btn-primary" data-translate="buytickets" data-ticket-ru="https://phuket.qtickets.events/203866-biznes-master-klass-klyuchi-k-perekhodu-russkogo-biznesa-v-novyy-uklad" data-ticket-en="https://cbiletom.ru/event.php?event=11950" data-ticket-de="https://cbiletom.ru/event.php?event=11951">Купить билеты</a>
+                                <a href="https://arbipay.online/?customer=caa5ac97-7972-45cd-b76e-062e46b62c3e" class="ticket-btn ticket-btn-baths" data-translate="buybaths">Купить билет в батах</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Silver Tier -->
-                <div class="col-md-4">
-                    <div class="card h-100 text-center p-4 shadow-lg d-flex flex-column" style="background-color: #626d93; border: 1px solid #f6931d;">
-                        <h3 class="text-white fw-bold text-uppercase mb-4" data-translate="silvertier">Silver</h3>
-                        <ul class="list-unstyled text-white fs-5 mb-4">
-                            <li class="mb-2" data-translate="silveritem1">Со второго ряда</li>
-                            <li class="mb-2" data-translate="silveritem2">Презентация</li>
-                            <li class="mb-2" data-translate="silveritem3">Кофе-брейки</li>
-                            <li class="mb-2" data-translate="silveritem4">Фотосессия</li>
-                            <li class="mb-2" data-translate="silveritem5">Электронный сертификат</li>
-                        </ul>
-                        <div class="text-white fs-5 mb-4 mt-auto" style="min-height: 70px;">
-                            <p class="mb-1"><strong data-translate="until2212">до 22.12</strong> 58 000</p>
-                            <p class="mb-1"><strong data-translate="until0501">до 05.01</strong> 78 000</p>
-                            <p class="mb-0"><strong data-translate="until1301">до 13.01</strong> 98 000</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="pricing-card silver-card h-100">
+                        <div class="card-header">
+                            <div class="tier-badge silver-badge" data-translate="silvertier">Silver</div>
+                            <h4 class="text-white fw-bold">Серебряный пакет</h4>
                         </div>
-                        <div class="pricing-card-buttons">
-                            <a href="https://cbiletom.ru/event.php?event=11670" class="ticket-btn ticket-btn-primary" data-translate="buytickets" data-ticket-ru="https://cbiletom.ru/event.php?event=11670" data-ticket-en="https://cbiletom.ru/event.php?event=11950" data-ticket-de="https://cbiletom.ru/event.php?event=11951">Купить билеты</a>
-                            <a href="https://arbipay.online/?customer=caa5ac97-7972-45cd-b76e-062e46b62c3e" class="ticket-btn ticket-btn-baths" data-translate="buybaths">Купить билет в батах</a>
+                        <div class="card-body">
+                            <ul class="list-unstyled text-white mb-4 flex-grow-1">
+                                <li class="mb-2" data-translate="silveritem1">Рассадка на стульях 5,6 ряды в пространстве лаунж-кафе</li>
+                                <li class="mb-2" data-translate="silveritem2">Презентация</li>
+                                <li class="mb-2" data-translate="silveritem3">Кофе-брейк networking</li>
+                                <li class="mb-2" data-translate="silveritem4">Фотосессия</li>
+                            </ul>
+                            <div class="price-container">
+                                <div class="price-item">
+                                    <span class = "date-period" data-translate="until2212">до 01.01</span>
+                                    <span class="price-value">47 000 ₽</span>
+                                </div>
+                                <div class="price-item">
+                                    <span class = "date-period" data-translate="until0501">до 13.01</span>
+                                    <span class="price-value">67 000 ₽</span>
+                                </div>
+                                <div class="price-item">
+                                    <span class = "date-period" data-translate="until1301">до 16.01</span>
+                                    <span class="price-value">87 000 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="pricing-card-buttons">
+                                <a href="https://phuket.qtickets.events/203866-biznes-master-klass-klyuchi-k-perekhodu-russkogo-biznesa-v-novyy-uklad" class="ticket-btn ticket-btn-primary" data-translate="buytickets" data-ticket-ru="https://phuket.qtickets.events/203866-biznes-master-klass-klyuchi-k-perekhodu-russkogo-biznesa-v-novyy-uklad" data-ticket-en="https://cbiletom.ru/event.php?event=11950" data-ticket-de="https://cbiletom.ru/event.php?event=11951">Купить билеты</a>
+                                <a href="https://arbipay.online/?customer=caa5ac97-7972-45cd-b76e-062e46b62c3e" class="ticket-btn ticket-btn-baths" data-translate="buybaths">Купить билет в батах</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bronze Tier -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="pricing-card bronze-card h-100">
+                        <div class="card-header">
+                            <div class="tier-badge bronze-badge" data-translate="bronzetier">Bronze</div>
+                            <h4 class="text-white fw-bold">Бронзовый пакет</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled text-white mb-4 flex-grow-1">
+                                <li class="mb-2" data-translate="bronzeitem1">Рассадка на стульях 7,8,9,10 ряды open-air</li>
+                                <li class="mb-2" data-translate="bronzeitem2">Презентация</li>
+                                <li class="mb-2" data-translate="bronzeitem3">Кофе-брейк networking</li>
+                                <li class="mb-2" data-translate="bronzeitem4">Фотосессия</li>
+                            </ul>
+                            <div class="price-container">
+                                <div class="price-item">
+                                    <span class = "date-period" data-translate="until2212">до 01.01</span>
+                                    <span class="price-value">28 000 ₽</span>
+                                </div>
+                                <div class="price-item">
+                                    <span class = "date-period" data-translate="until0501">до 13.01</span>
+                                    <span class="price-value">38 000 ₽</span>
+                                </div>
+                                <div class="price-item">
+                                    <span class = "date-period" data-translate="until1301">до 16.01</span>
+                                    <span class="price-value">48 000 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="pricing-card-buttons">
+                                <a href="https://phuket.qtickets.events/203866-biznes-master-klass-klyuchi-k-perekhodu-russkogo-biznesa-v-novyy-uklad" class="ticket-btn ticket-btn-primary" data-translate="buytickets" data-ticket-ru="https://phuket.qtickets.events/203866-biznes-master-klass-klyuchi-k-perekhodu-russkogo-biznesa-v-novyy-uklad" data-ticket-en="https://cbiletom.ru/event.php?event=11950" data-ticket-de="https://cbiletom.ru/event.php?event=11951">Купить билеты</a>
+                                <a href="https://arbipay.online/?customer=caa5ac97-7972-45cd-b76e-062e46b62c3e" class="ticket-btn ticket-btn-baths" data-translate="buybaths">Купить билет в батах</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -656,24 +862,39 @@
                 topic6title: 'И сейчас...',
                 topic6text: 'Что делать в понедельник, чтобы начать внедрять все, что я рекомендую в этой презентации.',
                 pricingtitle: 'Стоимость участия',
+                // VIP Tier
+                viptier: 'VIP',
+                vipitem1: 'Первый ряд',
+                vipitem2: 'Отдельная регистрация',
+                vipitem3: 'Бизнес-ужин с Garrett',
+                vipitem4: 'Индивидуальная консультация по прорывам вашего бизнеса в 2026',
+                vipitem5: 'Презентация',
+                vipitem6: 'Кофе-брейк networking c Гарретом',
+                vipitem7: 'Фотосессия',
+                vipitem8: 'Сертификат',
+                // Gold Tier
                 goldtier: 'Gold',
-                golditem1: 'Первая ряд',
-                golditem2: 'Отдельная регистрация',
-                golditem3: 'Бизнес-ужин с Garrett',
-                golditem4: 'Индивидуальная консультация по прорывам вашего бизнеса в 2026',
-                golditem5: 'Презентация',
-                golditem6: 'Кофе-брейк networking',
-                golditem7: 'Фотосессия',
-                golditem8: 'Сертификат',
+                golditem1: 'Рассадка на стулья близко к сцене 2,3,4 ряды',
+                golditem2: 'Презентация',
+                golditem3: 'Кофе-брейк networking',
+                golditem4: 'Фотосессия',
+                golditem5: 'Сертификат',
+                // Silver Tier
                 silvertier: 'Silver',
-                silveritem1: 'Со второго ряда',
+                silveritem1: 'Рассадка на стульях 5,6 ряды в пространстве лаунж-кафе',
                 silveritem2: 'Презентация',
-                silveritem3: 'Кофе-брейки',
+                silveritem3: 'Кофе-брейк networking',
                 silveritem4: 'Фотосессия',
-                silveritem5: 'Электронный сертификат',
-                until2212: 'до 22.12',
-                until0501: 'до 05.01',
-                until1301: 'до 13.01',
+                // Bronze Tier
+                bronzetier: 'Bronze',
+                bronzeitem1: 'Рассадка на стульях 7,8,9,10 ряды open-air',
+                bronzeitem2: 'Презентация',
+                bronzeitem3: 'Кофе-брейк networking',
+                bronzeitem4: 'Фотосессия',
+                // Price periods
+                until2212: 'до 01.01',
+                until0501: 'до 13.01',
+                until1301: 'до 16.01',
                 becomepartner: 'Стать <span class="fw-bold">партнером</span> мероприятия',
                 videogallerytitle: 'Медиа',
                 videocard1title: 'Видео-приглашение',
@@ -714,24 +935,39 @@
                 topic6title: 'And Now...',
                 topic6text: 'What to do on Monday to start implementing everything I recommend in this presentation.',
                 pricingtitle: 'Participation Cost',
+                // VIP Tier
+                viptier: 'VIP',
+                vipitem1: 'First row',
+                vipitem2: 'Separate registration',
+                vipitem3: 'Business dinner with Garrett',
+                vipitem4: 'Individual consultation on your business breakthroughs in 2026',
+                vipitem5: 'Presentation',
+                vipitem6: 'Coffee break networking with Garrett',
+                vipitem7: 'Photo session',
+                vipitem8: 'Certificate',
+                // Gold Tier
                 goldtier: 'Gold',
-                golditem1: 'First row',
-                golditem2: 'Separate registration',
-                golditem3: 'Business dinner with Garrett',
-                golditem4: 'Individual consultation on your business breakthroughs in 2026',
-                golditem5: 'Presentation',
-                golditem6: 'Coffee break networking',
-                golditem7: 'Photo session',
-                golditem8: 'Certificate',
+                golditem1: 'Seating on chairs close to the stage, rows 2,3,4',
+                golditem2: 'Presentation',
+                golditem3: 'Coffee break networking',
+                golditem4: 'Photo session',
+                golditem5: 'Certificate',
+                // Silver Tier
                 silvertier: 'Silver',
-                silveritem1: 'From the second row',
+                silveritem1: 'Seating on chairs rows 5,6 in the lounge-cafe area',
                 silveritem2: 'Presentation',
-                silveritem3: 'Coffee breaks',
+                silveritem3: 'Coffee break networking',
                 silveritem4: 'Photo session',
-                silveritem5: 'Electronic certificate',
-                until2212: 'until 22.12',
-                until0501: 'until 05.01',
-                until1301: 'until 13.01',
+                // Bronze Tier
+                bronzetier: 'Bronze',
+                bronzeitem1: 'Seating on chairs rows 7,8,9,10 open-air',
+                bronzeitem2: 'Presentation',
+                bronzeitem3: 'Coffee break networking',
+                bronzeitem4: 'Photo session',
+                // Price periods
+                until2212: 'until 01.01',
+                until0501: 'until 13.01',
+                until1301: 'until 16.01',
                 becomepartner: 'Become a <span class="fw-bold">partner</span> of the event',
                 videogallerytitle: 'Media',
                 videocard1title: 'Video Invitation',
@@ -772,24 +1008,39 @@
                 topic6title: 'Und Jetzt',
                 topic6text: 'Was am Montag zu tun ist, um alles umzusetzen, was ich in dieser Präsentation empfehle.',
                 pricingtitle: 'Teilnahmekosten',
+                // VIP Tier
+                viptier: 'VIP',
+                vipitem1: 'Erste Reihe',
+                vipitem2: 'Separate Registrierung',
+                vipitem3: 'Business-Dinner mit Garrett',
+                vipitem4: 'Individuelle Beratung zu den Durchbrüchen Ihres Unternehmens in 2026',
+                vipitem5: 'Präsentation',
+                vipitem6: 'Kaffeepause Networking mit Garrett',
+                vipitem7: 'Fotosession',
+                vipitem8: 'Zertifikat',
+                // Gold Tier
                 goldtier: 'Gold',
-                golditem1: 'Erste Reihe',
-                golditem2: 'Separate Registrierung',
-                golditem3: 'Business-Dinner mit Garrett',
-                golditem4: 'Individuelle Beratung zu den Durchbrüchen Ihres Unternehmens in 2026',
-                golditem5: 'Präsentation',
-                golditem6: 'Kaffeepause Networking',
-                golditem7: 'Fotosession',
-                golditem8: 'Zertifikat',
+                golditem1: 'Sitzplätze auf Stühlen nahe der Bühne, Reihen 2,3,4',
+                golditem2: 'Präsentation',
+                golditem3: 'Kaffeepause Networking',
+                golditem4: 'Fotosession',
+                golditem5: 'Zertifikat',
+                // Silver Tier
                 silvertier: 'Silber',
-                silveritem1: 'Aus der zweiten Reihe',
+                silveritem1: 'Sitzplätze auf Stühlen Reihen 5,6 im Lounge-Café-Bereich',
                 silveritem2: 'Präsentation',
-                silveritem3: 'Kaffeepausen',
+                silveritem3: 'Kaffeepause Networking',
                 silveritem4: 'Fotosession',
-                silveritem5: 'Elektronisches Zertifikat',
-                until2212: 'bis 22.12',
-                until0501: 'bis 05.01',
-                until1301: 'bis 13.01',
+                // Bronze Tier
+                bronzetier: 'Bronze',
+                bronzeitem1: 'Sitzplätze auf Stühlen Reihen 7,8,9,10 Open-Air',
+                bronzeitem2: 'Präsentation',
+                bronzeitem3: 'Кaffeepause Networking',
+                bronzeitem4: 'Fotosession',
+                // Price periods
+                until2212: 'bis 01.01',
+                until0501: 'bis 13.01',
+                until1301: 'bis 16.01',
                 becomepartner: 'Werden Sie <span class="fw-bold">Partner</span> der Veranstaltung',
                 videogallerytitle: 'Medien',
                 videocard1title: 'Videoeinladung',
@@ -802,7 +1053,7 @@
         };
 
         const ticketLinks = {
-            ru: 'https://cbiletom.ru/event.php?event=11670',
+            ru: 'https://phuket.qtickets.events/203866-biznes-master-klass-klyuchi-k-perekhodu-russkogo-biznesa-v-novyy-uklad',
             en: 'https://cbiletom.ru/event.php?event=11950',
             de: 'https://cbiletom.ru/event.php?event=11951'
         };
